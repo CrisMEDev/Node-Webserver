@@ -7,10 +7,19 @@ app.set('view engine', 'hbs');
 // Servir contenido estático
 app.use( express.static('public') );
 
-app.get('/', (req, res) => {
+app.get('/', (req, res) => {    // Esta función es un controlador
+
     // La idea de handlebars es utilizar el patrón mvc (model, view, controller)
-    res.render('home'); // Renderiza la vista; ahora se puede reutilizar bloques de código
+    res.render('home', {
+
+        nombre: 'Cristian Morales',
+        titulo: 'Aprendiendo node'
+
+    }); // Renderiza la vista; ahora se puede reutilizar bloques de código
 });
+
+
+
 
 
 // Se utilizan los sendfile para que en el header de el navegador no sea visible la extension .html

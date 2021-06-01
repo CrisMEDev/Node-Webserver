@@ -6,7 +6,8 @@
 -->
 <html>
 	<head>
-		<title>ZeroFour by HTML5 UP</title>
+		{{!-- Se rebiben los argumentos renderizados en la vista --}}
+		<title>{{ titulo }}</title>  
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -23,7 +24,8 @@
 								<div class="inner">
 
 									<!-- Logo -->
-										<h1><a href="/" id="logo">ZeroFour</a></h1>
+									{{!-- Nombre capturado del render --}}
+										<h1><a href="/" id="logo">{{ nombre }}</a></h1>
 
 									<!-- Nav -->
 										<nav id="nav">
@@ -57,7 +59,7 @@
 
 						<!-- Banner -->
 							<div id="banner">
-								<h2><strong>ZeroFour:</strong> A free responsive site template
+								<h2><strong>{{nombre}}</strong>: A free responsive site template
 								<br />
 								built on HTML5 and CSS3 by <a href="http://html5up.net">HTML5 UP</a></h2>
 								<p>Does this statement make you want to click the big shiny button?</p>
