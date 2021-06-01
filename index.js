@@ -1,9 +1,17 @@
 const express = require('express')
 const app = express()
 
+// TODO: require('hbs');
+app.set('view engine', 'hbs');
 
 // Servir contenido estático
 app.use( express.static('public') );
+
+app.get('/', (req, res) => {
+    // La idea de handlebars es utilizar el patrón mvc (model, view, controller)
+    res.render('home'); // Renderiza la vista; ahora se puede reutilizar bloques de código
+});
+
 
 // Se utilizan los sendfile para que en el header de el navegador no sea visible la extension .html
 app.get('/no-sidebar', (req, res) => {
