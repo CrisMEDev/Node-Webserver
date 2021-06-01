@@ -1,8 +1,12 @@
 const express = require('express')
+const hbs = require('hbs');
+
+
 const app = express()
 
-// TODO: require('hbs');
+// Handlebars
 app.set('view engine', 'hbs');
+hbs.registerPartials( __dirname + '/views/partials' );
 
 // Servir contenido estático
 app.use( express.static('public') );
@@ -17,6 +21,36 @@ app.get('/', (req, res) => {    // Esta función es un controlador
 
     }); // Renderiza la vista; ahora se puede reutilizar bloques de código
 });
+
+app.get('/no-sidebar', (req, res) => {
+    res.render( 'no-sidebar', {
+        nombre: 'Cristian Morales',
+        titulo: 'Aprendiendo node'
+    });
+});
+
+app.get('/left-sidebar', (req, res) => {
+    res.render( 'left-sidebar', {
+        nombre: 'Cristian Morales',
+        titulo: 'Aprendiendo node'
+    });
+});
+
+app.get('/right-sidebar', (req, res) => {
+    res.render( 'right-sidebar', {
+        nombre: 'Cristian Morales',
+        titulo: 'Aprendiendo node'
+    });
+});
+
+app.get('*', (req, res) => {
+    res.render( '404', {
+        nombre: 'Cristian Morales',
+        titulo: 'Aprendiendo node'
+    });
+});
+
+
 
 
 
