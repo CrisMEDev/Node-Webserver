@@ -1,8 +1,9 @@
-const express = require('express')
+require('dotenv').config();
+const express = require('express');
 const hbs = require('hbs');
 
-
 const app = express()
+const port = process.env.PORT;
 
 // Handlebars
 app.set('view engine', 'hbs');
@@ -75,7 +76,9 @@ app.get('*', (req, res) => {
                                                     // que contiene el path del lugar donde se ejecuta la aplicacion
 });
  
-app.listen(8080);
+app.listen(port, () => {
+    console.log(`Escuchando en: http://localhost:${port}`);
+});
 
 
 
