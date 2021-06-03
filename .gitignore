@@ -1,13 +1,3 @@
 /node_modules/
 /public/template/
 
-# Pagina web files
-/public/assets/
-/public/images/
-/public/index.html
-/public/left-sidebar.html
-/public/no-sidebar.html
-/public/right-sidebar.html
-/public/README.txt
-/public/LICENSE.txt
-
